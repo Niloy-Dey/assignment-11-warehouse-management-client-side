@@ -6,16 +6,16 @@ import {getAuth} from 'firebase/auth'
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBb-44fGwjRFdbz4-1zLtsHQ-pJ0VmesqU",
-  authDomain: "genius-cart-services-ad5e1.firebaseapp.com",
-  projectId: "genius-cart-services-ad5e1",
-  storageBucket: "genius-cart-services-ad5e1.appspot.com",
-  messagingSenderId: "382371169901",
-  appId: "1:382371169901:web:4f308902532d7ed1a42164"
+  apiKey: "AIzaSyDA4gTopvNFBbDPnP6CQatCOIZhJ6UCFe8",
+  authDomain: "refrigerator-world.firebaseapp.com",
+  projectId: "refrigerator-world",
+  storageBucket: "refrigerator-world.appspot.com",
+  messagingSenderId: "114676530960",
+  appId: "1:114676530960:web:ff7ffd2dc8a2ccada1af95"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-const auth = getAuth(app)
+const auth = getAuth(app);
 export default auth;
