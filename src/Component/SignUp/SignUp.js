@@ -21,7 +21,7 @@ const SignUp = () => {
     return (
         <div>
             <form onSubmit={handleCreateUser}>
-            <h1 className="signup mt-5">SIGN UP</h1>
+            <h1 className="signup mt-5 pt-5">SIGN UP</h1>
             <p className="text-danger text-center">{error}</p>
             <div className="form-container mx-auto">
                 <div className="container signup-container">
