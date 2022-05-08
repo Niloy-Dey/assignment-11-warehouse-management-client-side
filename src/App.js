@@ -8,6 +8,9 @@ import Login from './Component/Login/Login';
 import NotFound from './Component/NotFound/NotFound';
 import AllProduct from './Component/AllProduct/AllProduct';
 import AddProduct from './Component/AddProduct/AddProduct';
+import ManageProduct from './Component/ManageProduct/ManageProduct';
+import Blog from './Component/Blog/Blog';
+import RequireAuth from './Component/RequireAuth/RequireAuth';
 
 function App() {
  
@@ -19,10 +22,22 @@ function App() {
             <Route path='/home' element={<Home></Home>}></Route>
             <Route path='/signUp'  element={<SignUp></SignUp>}></Route>
             <Route path='/login' element={<Login></Login>}></Route>
-            <Route path='/addProduct' element={<AddProduct></AddProduct>}></Route>
-            <Route path='allProduct' element={<AllProduct></AllProduct>} ></Route>
-            <Route path='Blog'></Route>
-            <Route path='manageItem'></Route>
+            <Route path='/addProduct' element={
+                <RequireAuth>
+                  <AddProduct></AddProduct>
+                </RequireAuth>
+            }></Route>
+            <Route path='allProduct' element={
+                <RequireAuth>
+                  <AllProduct></AllProduct>
+                </RequireAuth>
+            } ></Route>
+            <Route path='Blog' element={<Blog></Blog>}></Route>
+            <Route path='manageProduct' element={
+                <RequireAuth>
+                  <ManageProduct></ManageProduct>
+                </RequireAuth>
+            }></Route>
             <Route path='*'element={ <NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>

@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './AddProduct.css'
 const AddProduct = () => {
+
     const addItem = event =>{
         event.preventDefault();
         const name = event.target.name.value;
@@ -28,9 +29,10 @@ const AddProduct = () => {
     }
 
     return (
-        <div className='w-50 mx-auto mt-5 pt-5'>
+
+            <div className='w-50 mx-auto mt-5 pt-5'>
             <h1 className='text-center text-success'>Add Item</h1>
-            <form  onSubmit={addItem} className='w-100 p-3 '>
+            <form  onSubmit={addItem} className=' from-design w-100 p-3 '>
                 <input placeholder='Enter product name' type="text" name="name" id="" />
                 <input placeholder='Enter product price' type="text" name="price" id="" />
                 <input placeholder='Enter product quantity' type="text" name="quantity" id="" />
@@ -41,6 +43,9 @@ const AddProduct = () => {
             </form>
             
         </div>
+
+       
+
     );
 };
 
