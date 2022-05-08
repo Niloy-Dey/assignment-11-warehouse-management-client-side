@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
+import useProduct from '../../hooks/useProduct';
 
 const ManageProduct = () => {
-    const [products , setProducts] = useState([]);
-    console.log(products);
+    const [products , setProducts] = useProduct([]);
+    
 
     const handleDelete = id =>{
-        const proceed = window.confirm('Are you sure ?');
+        const proceed = window.confirm('Are you sure delete this item ?');
         if(proceed) {
             const url = `http://localhost:5000/products/${id}`;
                 fetch(url, {
@@ -24,7 +25,7 @@ const ManageProduct = () => {
     return (
         <div>
             <div className='w-50 mx-auto mt-5 pt-5'>
-            <h1>manage your services</h1>
+            <h1>Manage Products</h1>
             {
                 products.map(product => 
                 <div key={product.id}> 

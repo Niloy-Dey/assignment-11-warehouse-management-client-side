@@ -35,13 +35,13 @@ function App() {
             } ></Route>
             <Route path='Blog' element={<Blog></Blog>}></Route>
             <Route path='manageProduct' element={
-                <RequireAuth>
-                  <ManageProduct></ManageProduct>
-                </RequireAuth>
+               <ManageProduct></ManageProduct>
             }></Route>
             <Route path='*'element={ <NotFound></NotFound>}></Route>
+
+            <Route path='/inventory/:productId' element={<Inventory></Inventory> }></Route>
       </Routes>
-      <Route path='/inventory/:id' element={<Inventory></Inventory>}></Route>
+      
       <Footer></Footer>
     </div>  
 )

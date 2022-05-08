@@ -1,15 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import useProduct from '../../hooks/useProduct';
 import Product from '../Product/Product'
 import './Products.css'
 const Products = () => {
-    const [products , setProducts] = useState([]);
-    useEffect(()=>{
-        fetch('http://localhost:5000/products')
-        .then(res => res.json())
-        .then(data =>setProducts(data))
-    } ,[])
-
+    const [products, setProducts] = useProduct({})
     const someProduct = products.slice(1, 7);
     // console.log(someProduct);
 
