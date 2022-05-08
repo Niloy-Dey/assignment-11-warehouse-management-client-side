@@ -24,16 +24,7 @@ const Blog = () => {
                 <p>Ans: JSON Web Token, is an open standard used to share security information between two parties — a client and a server. Each JWT contains encoded JSON objects, including a set of claims. </p>
             </div>
             
-            {/* 
-            
-            
-13.1 
-
-13.2 
-
-13.3 .
-
-13.4 */}
+            {/* https://stackoverflow.com/users/16990191/niloy-dey?tab=answers */}
 
         </div>
     );

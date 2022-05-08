@@ -2,12 +2,13 @@ import React , { useState }from 'react';
 import { Link } from 'react-router-dom';
 import './SignUp.css'
 import auth from  '../../firebase.init'
-import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle  } from 'react-firebase-hooks/auth';
 const SignUp = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [createUserWithEmailAndPassword, user, loding, error] = useCreateUserWithEmailAndPassword(auth)
+    const [createUserWithEmailAndPassword, loding, error] = useCreateUserWithEmailAndPassword(auth)
     const [SignInWithGoogle] = useSignInWithGoogle(auth);
+   
     const handleEmail = event =>{
         setEmail(event.target.value);
     }
@@ -18,6 +19,8 @@ const SignUp = () => {
         event.preventDefault();
         createUserWithEmailAndPassword(email, password);
     }
+
+
     return (
         <div>
             <form onSubmit={handleCreateUser}>
@@ -33,7 +36,7 @@ const SignUp = () => {
                 <br />
                 <p>Already have an account?  <Link  to="/login">Log in</Link></p>
                 <br />
-                <button type="submit" className="submit w-50 "><strong>SIGN UP</strong></button>
+                <button type="submit"  className="submit w-50 "><strong>SIGN UP</strong></button>
                 <br />
 
                 <button onClick={() => SignInWithGoogle()} className="btn btn-warning w-50 py-3 fw-bold">Continue With Google</button>

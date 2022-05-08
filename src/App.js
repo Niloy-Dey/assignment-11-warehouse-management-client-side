@@ -11,6 +11,7 @@ import AddProduct from './Component/AddProduct/AddProduct';
 import ManageProduct from './Component/ManageProduct/ManageProduct';
 import Blog from './Component/Blog/Blog';
 import RequireAuth from './Component/RequireAuth/RequireAuth';
+import Inventory from './Component/Inventory/Inventory';
 
 function App() {
  
@@ -40,6 +41,7 @@ function App() {
             }></Route>
             <Route path='*'element={ <NotFound></NotFound>}></Route>
       </Routes>
+      <Route path='/inventory/:id' element={<Inventory></Inventory>}></Route>
       <Footer></Footer>
     </div>  
 )
