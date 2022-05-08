@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, Navigate } from 'react-router-dom';
-import AllProduct from '../AllProduct/AllProduct';
+import { Link } from 'react-router-dom';
 import Product from '../Product/Product'
 import './Products.css'
 const Products = () => {
