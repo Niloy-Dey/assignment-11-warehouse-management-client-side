@@ -7,7 +7,7 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const [signInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth);
+    const [signInWithEmailAndPassword, error, loading ] = useSignInWithEmailAndPassword(auth);
     const [SignInWithGoogle] = useSignInWithGoogle(auth);
 
     const handleEmailBlur= event =>{
@@ -37,6 +37,7 @@ const Login = () => {
                 </div>
                 <br />
                 <p>New to refrigerator world?  <Link to="/signup">Sign up</Link></p>
+                <p className=" text-center">{error}</p>
                 <br />
                 <button type="submit" onClick={() => signInWithEmailAndPassword(email, password)} className="submit w-50"><strong>LOGIN</strong></button>
                 <br />

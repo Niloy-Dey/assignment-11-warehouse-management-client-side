@@ -7,6 +7,7 @@ import Footer from './Component/Footer/Footer';
 import Login from './Component/Login/Login';
 import NotFound from './Component/NotFound/NotFound';
 import AllProduct from './Component/AllProduct/AllProduct';
+import AddProduct from './Component/AddProduct/AddProduct';
 
 function App() {
  
@@ -18,7 +19,7 @@ function App() {
             <Route path='/home' element={<Home></Home>}></Route>
             <Route path='/signUp'  element={<SignUp></SignUp>}></Route>
             <Route path='/login' element={<Login></Login>}></Route>
-            <Route path='/addProduct'></Route>
+            <Route path='/addProduct' element={<AddProduct></AddProduct>}></Route>
             <Route path='allProduct' element={<AllProduct></AllProduct>} ></Route>
             <Route path='Blog'></Route>
             <Route path='manageItem'></Route>
