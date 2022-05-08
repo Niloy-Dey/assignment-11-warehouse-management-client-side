@@ -12,7 +12,7 @@ const Product = ({product}) => {
                 <Card.Title> {name} </Card.Title>
                 <h5>price: {price} </h5>
                 <Card.Text> {description} </Card.Text>
-                <div className='text-center '><button className='btn-warning fw-bolder'>BOOK NOW</button></div>
+                <div className='text-center '><button className='btn btn-warning fw-bolder'>BOOK NOW</button></div>
             </Card.Body>
             </Card>        
         </div>
