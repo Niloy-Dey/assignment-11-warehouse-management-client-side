@@ -10,16 +10,17 @@ const Inventory = () => {
     const [products] = useProduct({});
     const singleProduct = products.find(pd => pd._id === productId)
     
-    console.log(singleProduct?.name);
+    
     const {name,  price, image, description} =singleProduct || {};
 
-    // const value = parseFloat(price);
+    const value = parseInt(price);
+console.log(typeof(value));
     const [totalPrice, setTotalPrice] =useState();
     const [newQuantity, setNewQuantity] = useState(1);
-    
-    // parseFloat(price)
+    // setTotalPrice(value);
     const handleIncrease = (event ) =>{ 
-            setTotalPrice(parseFloat(price));
+            // const value = parseFloat(price);
+            // setTotalPrice(price);
             const increase = newQuantity + 1;
             setNewQuantity(increase);
             const calculatePrice = parseFloat(price) * increase;
@@ -54,7 +55,11 @@ const Inventory = () => {
                     <div>
                     <h4>Price: {price} </h4>
                     <h4>Quantity: {newQuantity} </h4>
-                    <h4>Total Price: {totalPrice}</h4>
+                    { 
+                        totalPrice  ? <h4>Total Price: { totalPrice} </h4> : <div> </div>
+                    }
+                    
+
                     <button className='btn btn-primary'>Order</button>
                     </div>
             </div>
