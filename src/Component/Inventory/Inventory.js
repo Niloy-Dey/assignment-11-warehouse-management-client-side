@@ -7,33 +7,58 @@ const Inventory = () => {
     // const [addProduct, setAddProduct] =useState([]);
     const {productId} = useParams();
     const [product] = useProductDetails(productId);
-    console.log(productId);
-    // const [addproduct, setAddProduct] = useState('');
+    const [products] = useProduct({});
+    const singleProduct = products.find(pd => pd._id === productId)
+    
+    console.log(singleProduct?.name);
+    const {name,  price, image, description} =singleProduct || {};
 
-    const [products, setProducts] = useProduct({});
+    // const value = parseFloat(price);
+    const [totalPrice, setTotalPrice] =useState();
+    const [newQuantity, setNewQuantity] = useState(1);
+    
+    // parseFloat(price)
+    const handleIncrease = (event ) =>{ 
+            setTotalPrice(parseFloat(price));
+            const increase = newQuantity + 1;
+            setNewQuantity(increase);
+            const calculatePrice = parseFloat(price) * increase;
+            setTotalPrice(calculatePrice);
+            console.log(increase);
+    }
+    const handleDecrease = (event) =>{
+            const decrease = newQuantity - 1;
+            setNewQuantity(decrease); 
+            const calculatePrice = parseFloat(price) * decrease;
+            setTotalPrice(calculatePrice); 
+            console.log(decrease);   
+    }
+    
 
-    const singleProduct = products.filter(pd => pd._id === productId)
-    const checkValue = singleProduct[0];
-    console.log(checkValue);
-    // const [name, quantity, price, image] =singleProduct[0];
-
-    // const [increase, setIncrease] = useState('');
-    // const [decrease, setDecrease] = useState('');
+   
     return (
-        <div className='mt-5 pt-5'>
-         
-            {/* <d1>{singleProduct.priceiv className=' cart d-flex justify-content-between align-items-center '>
+       <div className='m-5 pt-5 d-flex justify-space-between'>
+            <div className=' pt-4 m-4 cart-style d-flex justify-content-between align-items-center '>
                 <div>
-                    <h6>{name}</h6>
-                    <h6>quantity:{decrease(quantity)}</h6>
-                    <h6>price:{price}</h6>
+                    <img src={image} alt="" />
                 </div>
-                <div>
-                    <button className='m-1' onClick={ () => setDecrease (quantity.value - 1)}>increase</button>
-                    <button className='m-1' onClick={() => setDecrease(quantity.value + 1) }>Decrease</button>
-                </div> */}
+                <div className=''>
+                    <h4>{name}</h4>
+                    <h5>Price: {price}</h5>
+                    <h6>Description: {description}</h6>
+                    <button className=' btn btn-success' onClick={handleIncrease}>increase</button>
+                    <button className='m-1 btn btn-warning' onClick={handleDecrease}>Decrease</button>
+                </div> 
             </div>
-        // </div>
+            <div className=' mt-4 order-style d-flex justify-content-center align-items-center'>
+                    <div>
+                    <h4>Price: {price} </h4>
+                    <h4>Quantity: {newQuantity} </h4>
+                    <h4>Total Price: {totalPrice}</h4>
+                    <button className='btn btn-primary'>Order</button>
+                    </div>
+            </div>
+       </div>
     );
 };
 
