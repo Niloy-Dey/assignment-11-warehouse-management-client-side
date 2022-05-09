@@ -14,13 +14,10 @@ const Inventory = () => {
     const {name,  price, image, description} =singleProduct || {};
 
     const value = parseInt(price);
-console.log(typeof(value));
     const [totalPrice, setTotalPrice] =useState();
     const [newQuantity, setNewQuantity] = useState(1);
-    // setTotalPrice(value);
+    
     const handleIncrease = (event ) =>{ 
-            // const value = parseFloat(price);
-            // setTotalPrice(price);
             const increase = newQuantity + 1;
             setNewQuantity(increase);
             const calculatePrice = parseFloat(price) * increase;
