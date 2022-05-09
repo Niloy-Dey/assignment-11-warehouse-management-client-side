@@ -5,7 +5,6 @@ import './Product.css'
 const Product = ({product}) => {
     const {_id, name, price, image, description} = product;
 
-
     const navigate = useNavigate();
     const navigateToInventory = (id) =>{
          navigate(`/inventory/${id}`)

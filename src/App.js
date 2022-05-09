@@ -39,7 +39,11 @@ function App() {
             }></Route>
             <Route path='*'element={ <NotFound></NotFound>}></Route>
 
-            <Route path='/inventory/:productId' element={<Inventory></Inventory> }></Route>
+            <Route path='/inventory/:productId' element={
+              <RequireAuth>
+                  <Inventory></Inventory>
+              </RequireAuth>
+             }></Route>
       </Routes>
       
       <Footer></Footer>

@@ -13,7 +13,7 @@ const AddProduct = () => {
         const details = {name , price, quantity, image, description, suplier};
         // console.log(data);
 
-        const url = `http://localhost:5000/products`;
+        const url = `https://serene-meadow-33947.herokuapp.com/products`;
         fetch(url, {
             method: 'POST',
             headers: {
